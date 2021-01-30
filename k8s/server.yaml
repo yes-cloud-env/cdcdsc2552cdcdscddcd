@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: FORREPLACE1235-webserver
-  namespace: FORREPLACE1235
+  name: cdcdsc2552cdcdscddcd-webserver
+  namespace: cdcdsc2552cdcdscddcd
   labels:
     app: apache
 spec:
@@ -21,26 +21,26 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: FORREPLACE1235-secret
+              name: cdcdsc2552cdcdscddcd-secret
               key: rootpassword
-        image: gcr.io/PROJECT123/FORREPLACE1235
+        image: gcr.io/pc-api-6479467557629758909-343/cdcdsc2552cdcdscddcd
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: FORREPLACE1235-pvc-sym-m
+        - name: cdcdsc2552cdcdscddcd-pvc-sym-m
           mountPath: /var/www/upload/image
       volumes:
-      - name: FORREPLACE1235-pvc-sym-m
+      - name: cdcdsc2552cdcdscddcd-pvc-sym-m
         persistentVolumeClaim:
-          claimName: FORREPLACE1235-pvc-sym-uploud
+          claimName: cdcdsc2552cdcdscddcd-pvc-sym-uploud
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: FORREPLACE1235-web-service
-  namespace: FORREPLACE1235
+  name: cdcdsc2552cdcdscddcd-web-service
+  namespace: cdcdsc2552cdcdscddcd
   labels:
-    run: FORREPLACE1235-web-service
+    run: cdcdsc2552cdcdscddcd-web-service
 spec:
   type: LoadBalancer
   ports:
@@ -52,8 +52,8 @@ spec:
 apiVersion: v1                  
 kind: PersistentVolumeClaim     
 metadata:                       
-   name: FORREPLACE1235-pvc-sym-uploud
-   namespace: FORREPLACE1235
+   name: cdcdsc2552cdcdscddcd-pvc-sym-uploud
+   namespace: cdcdsc2552cdcdscddcd
 spec:                           
    accessModes:                  
    - ReadWriteOnce              
